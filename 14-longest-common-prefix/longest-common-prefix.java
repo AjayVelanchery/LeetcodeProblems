@@ -15,6 +15,6 @@ class Solution {
             break;
         }
     }
-    return s1.substring(0,i);
+    return s2.substring(0,i);
     
     }}
