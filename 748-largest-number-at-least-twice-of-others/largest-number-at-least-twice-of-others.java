@@ -4,7 +4,7 @@ class Solution {
          for(int i=0;i<nums.length;i++){
          if(nums[i]>nums[max]){
               max=i;
-              p=i;
+             
          }  }
            for(int i=0;i<nums.length;i++){
             if(nums[max]!=nums[i]&&2*nums[i]>nums[max])
@@ -12,6 +12,6 @@ class Solution {
     return -1;
 }
          }
-         return p;
+         return max;
          }
 }
