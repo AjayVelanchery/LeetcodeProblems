@@ -1,18 +1,17 @@
 class Solution {
     public int dominantIndex(int[] nums) {
-    
-             int []arr=nums.clone();
-    
-  Arrays.sort(nums);
-        int number=nums[nums.length-1];
-       if(number>=(2*(nums[nums.length-2]))){
-
-        for(int i=0;i<arr.length;i++){
-           if(arr[i]==number){
-            return i;
-           } 
-        }
-       }
-        return -1;
-    }
+ int p=0;int max=0;
+         for(int i=0;i<nums.length;i++){
+         if(nums[i]>nums[max]){
+              max=i;
+              p=i;
+         }  }
+           for(int i=0;i<nums.length;i++){
+            if(nums[max]!=nums[i]&&2*nums[i]>nums[max])
+{
+    return -1;
+}
+         }
+         return p;
+         }
 }
