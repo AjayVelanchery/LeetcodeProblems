@@ -4,20 +4,19 @@ class Solution {
         int arr[]=new int[nums.length];
 
         int index=0;
+        int left=0;
+        int right=nums.length-1;
 
         for(int n:nums){
 
             if(n%2==0){
-                arr[index++]=n;
+                arr[left++]=n;
+            }
+            else{
+              arr[right--]=n;
             }
         }
 
-        for(int n:nums){
-
-            if(n%2!=0){
-                arr[index++]=n;
-            }
-        }
         
 
         return arr;
