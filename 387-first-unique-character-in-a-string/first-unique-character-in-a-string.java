@@ -1,14 +1,19 @@
 class Solution {
     public int firstUniqChar(String s) {
+       int freq[]=new int[26];
+        char ch[]=s.toCharArray();
+ for(char c:ch){
 
+    freq[c-'a']++;
+ }
 
-        int a=Integer.MAX_VALUE;
-        for(char c='a';c<='z';c++){
-            int index=s.indexOf(c);
-            if(index!=-1&&index==s.lastIndexOf(c)){
-              a=Math.min(a,index);
-            }
-        }
-  return a==Integer.MAX_VALUE?-1:a;
+ for(int i=0;i<ch.length;i++){
+
+if(freq[ch[i]-'a']==1)
+return i;
+ }
+ return -1;
+
+        
     }
 }
