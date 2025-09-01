@@ -1,29 +1,24 @@
 class Solution {
     public int countCharacters(String[] words, String chars) {
-int sum=0;        
-      int []chars1=new int[26];
-        for(char c:chars.toCharArray()){
-         
-         chars1[c-'a']++;
-        }
+        int sum = 0;
 
+        for (String word : words) {
+            StringBuilder temp = new StringBuilder(chars); // copy of chars for this word
+            boolean canForm = true;
 
-        for(String s:words){
-          int []freq=new int[26];
-            for(char c1:s.toCharArray()){
-           freq[c1-'a']++;
+            for (char c : word.toCharArray()) {
+                int index = temp.indexOf(String.valueOf(c));
+                if (index >= 0) {
+                    temp.deleteCharAt(index); // remove used char
+                } else {
+                    canForm = false;
+                    break;
+                }
             }
-            boolean confirm=true;
 
-       for(int i=0;i<26;i++){
-        if(freq[i]>chars1[i]){
-          confirm=false;
-          break;
-        }
-       }
-       if(confirm){
-        sum+=s.length();
-       }
+            if (canForm) {
+                sum += word.length();
+            }
         }
 
         return sum;
