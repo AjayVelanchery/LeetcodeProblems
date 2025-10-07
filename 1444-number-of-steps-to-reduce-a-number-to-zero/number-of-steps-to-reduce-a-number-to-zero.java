@@ -1,21 +1,21 @@
-    class Solution {
+class Solution {
     public int numberOfSteps(int num) {
-           int i=0;
-        while(num>0){
-               
-            if(num%2==0){
-                num=num/2;
-               
-
-            }
-
-            else{
-                num=num-1;
-                
-            }
-
-          i++;
-        }
-          return i;
+        
+ return reduce(num,0);
+    
     }
+    static int reduce(int n,int c){
+
+
+        if(n==0){
+            return c;
+        }
+        if(n%2==0){
+            return reduce(n/2,c+1);
+        }
+        return reduce(n-1,c+1);
+
+    }
+    
+    
 }
