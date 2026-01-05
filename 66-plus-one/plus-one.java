@@ -1,25 +1,20 @@
 class Solution {
     public int[] plusOne(int[] digits) {
 
+
         for(int i=digits.length-1;i>=0;i--){
 
-            digits[i]++;
+            if(digits[i]<9){
 
-
-            if(digits[i]==10){
-
-                digits[i]=0;
-            }
-            else{
+                digits[i]++;
                 return digits;
             }
+            digits[i]=0;
         }
 
-        int result[]=new int[digits.length+1];
-        result[0]=1;
-        return result;
-    
-
+        int []arr=new int[digits.length+1];
+        arr[0]=1;
+        return arr;
         
     }
 }
