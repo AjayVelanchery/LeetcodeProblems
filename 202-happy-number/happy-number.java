@@ -2,16 +2,14 @@ class Solution {
     public boolean isHappy(int n) {
 
 ArrayList<Integer> seen=new ArrayList<>();
-int sum=0;
-while(sum!=1){
-sum=square(n);
 
-     
-      n=sum;
-      if(seen.contains(sum)){
+while(n!=1){
+
+      if(seen.contains(n)){
         return false;
       }
-       seen.add(sum);
+       seen.add(n);
+       n=square(n);
       }
      
 return true;
