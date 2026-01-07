@@ -5,8 +5,7 @@ ArrayList<Integer> seen=new ArrayList<>();
 int sum=0;
 while(sum!=1){
 sum=square(n);
-System.out.print(sum);
-System.out.print(seen);
+
      
       n=sum;
       if(seen.contains(sum)){
