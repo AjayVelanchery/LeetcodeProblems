@@ -6,10 +6,12 @@ class Solution {
         for(int i=0;i<nums.length;i++){
 
             if(hp.containsKey(nums[i])){
+
                 int index=hp.get(nums[i]);
                 if(i-index<=k){
                     return true;
                 }
+
             }
             hp.put(nums[i],i);
         }
