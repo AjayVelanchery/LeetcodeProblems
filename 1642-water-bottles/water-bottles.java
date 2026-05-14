@@ -1,26 +1,25 @@
 class Solution {
     public int numWaterBottles(int numBottles, int numExchange) {
 
-        if(numBottles<numExchange){
-            return numBottles;
-        }
 
-        int numBottles1=numBottles;
+        int total=numBottles;
+        int drinkBottles=numBottles;
+        
 
-        int drinkable=numBottles;
-        int quotient=0;
-        int remainder=0;
-        while(numBottles1>=numExchange){
-              
-         quotient=numBottles1/numExchange;
-         drinkable+=quotient;
-          remainder=numBottles1%numExchange;
+
+        while(drinkBottles>=numExchange){
+
+            int remainderBottles=drinkBottles%numExchange;
+            drinkBottles/=numExchange;
+
+            total+=drinkBottles;
            
-             numBottles1=  quotient+remainder;
-        
-    
+       
+            if(remainderBottles>0){
+                drinkBottles+=remainderBottles;
+            }
+            
         }
-        return drinkable;
-        
-    }
+        return total;
+            }
 }
