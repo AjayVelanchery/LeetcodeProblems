@@ -5,7 +5,7 @@ class Solution {
 
         int carry=0;
      int p=num.length-1;
-        while(p>=0||k>0||carry>0){
+        while(p>=0||k>0){
 
           int numVal = 0;
             if(p>=0){
@@ -20,9 +20,12 @@ class Solution {
 
             p--;
             k=k/10;
-            ans.add(0,digit);
+            ans.add(digit);
         }
-     
+        if (carry>0){
+            ans.add(carry);
+        }
+        Collections.reverse(ans);
         return ans;
     }
 }
