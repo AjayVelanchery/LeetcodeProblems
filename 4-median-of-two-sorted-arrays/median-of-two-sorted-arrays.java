@@ -5,10 +5,10 @@ class Solution {
 
         if(ans.length%2==0){
 
-          return (double)(ans[ans.length/2]+ans[ans.length/2-1])/2;
+          return (ans[ans.length/2]+ans[ans.length/2-1])/2.0;
         }
         else
-        return  (double)ans[ans.length/2];
+        return ans[ans.length/2];
     }
 
 public int[] merge(int[] nums1,int[] nums2){
